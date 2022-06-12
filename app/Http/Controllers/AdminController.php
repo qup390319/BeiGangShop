@@ -111,13 +111,33 @@ class AdminController extends Controller
             $result=[
                 'store'=>$store,
             ];
-
             return $result;
+        }catch (\Exception $exception){
+        }
+    }
+    public function insert_storeHome_data(Request $request)
+    {
+        try{
+            if ($request->add_name===null){return 'err';}
+            if ($request->add_phone===null){return 'err';}
+            if ($request->add_address===null){return 'err';}
+
+            //店家
+            DB::table('t_store_info')
+                ->insert([
+                    'info_name' => $request->add_name,
+                    'info_phone' => $request->add_phone,
+                    'info_address' => $request->add_address,
+                ]);
+
+
+            return 'success';
         }catch (\Exception $exception){
 
         }
 
     }
+
     //店家詳細資訊 storeDetail
     public function get_storeDetail_page()
     {

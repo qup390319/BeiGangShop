@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"/>
@@ -111,7 +112,7 @@
                                             地址
                                         </div>
                                         <div scope="col"
-                                             class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
+                                             class="text-sm font-medium text-gray-900 px-2 py-2 text-left flex justify-center">
                                             刪除
                                         </div>
                                     </div>
@@ -127,19 +128,23 @@
             </div>
             <!-- /表格 -->
 
-        <!-- 頁數 -->
+            <!-- 頁數 -->
             <div class="w-full flex justify-end space-x-1">
                 <div class="flex items-center space-x-1">
-                    <a href="#" class="px-3 py-1 text-gray-700 bg-gray-200 rounded-md hover:bg-blue-400 hover:text-white">
+                    <a href="#"
+                       class="px-3 py-1 text-gray-700 bg-gray-200 rounded-md hover:bg-blue-400 hover:text-white">
                         1
                     </a>
-                    <a href="#" class="px-3 py-1 text-gray-700 bg-gray-200 rounded-md hover:bg-blue-400 hover:text-white">
+                    <a href="#"
+                       class="px-3 py-1 text-gray-700 bg-gray-200 rounded-md hover:bg-blue-400 hover:text-white">
                         2
                     </a>
-                    <a href="#" class="px-3 py-1 text-gray-700 bg-gray-200 rounded-md hover:bg-blue-400 hover:text-white">
+                    <a href="#"
+                       class="px-3 py-1 text-gray-700 bg-gray-200 rounded-md hover:bg-blue-400 hover:text-white">
                         3
                     </a>
-                    <a href="#" class="px-3 py-1 text-gray-700 bg-gray-200 rounded-md hover:bg-blue-400 hover:text-white">
+                    <a href="#"
+                       class="px-3 py-1 text-gray-700 bg-gray-200 rounded-md hover:bg-blue-400 hover:text-white">
                         4
                     </a>
                 </div>
@@ -166,45 +171,47 @@
             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="overflow-hidden">
-                        <table class="min-w-full ">
-                            <thead class="bg-white">
-                            <tr>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
-                                    名稱
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
-                                    連絡電話
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
-                                    地址
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
-                                    新增
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr class="bg-gray-100 border-b">
-                                <td class="text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap">
-                                    Mark
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap">
-                                    Otto
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap">
-                                    @mdo
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500"
-                                         viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-                                              clip-rule="evenodd"/>
-                                    </svg>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                        <div class="min-w-full ">
+                            <div class="bg-white">
+                                <div class="flex w-full grid grid-cols-4">
+                                    <div scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
+                                        名稱
+                                    </div>
+                                    <div scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
+                                        連絡電話
+                                    </div>
+                                    <div scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
+                                        地址
+                                    </div>
+                                    <div scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left flex justify-center">
+                                        新增
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="bg-gray-100 border-b flex w-full grid grid-cols-4">
+                                    <div class="text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap">
+                                        <input id="add_name" class="w-full px-1 py-1" placeholder="名稱">
+                                    </div>
+                                    <div class="text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap">
+                                        <input id="add_phone" class="w-full px-1 py-1" placeholder="電話">
+                                    </div>
+                                    <div class="text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap">
+                                        <input id="add_address" class="w-full px-1 py-1" placeholder="地址">
+                                    </div>
+                                    <div class="flex justify-center text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap">
+                                        <button onclick="sure_add()">
+                                            <svg  xmlns="http://www.w3.org/2000/svg" class="flex justify-center h-6 w-6 text-blue-500"
+                                                  viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                                                      clip-rule="evenodd"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -224,7 +231,9 @@
     btn.addEventListener('click', () => {
         sidebar.classList.toggle('-translate-x-full');
     });
+
     $(document).ready(function () {
+        //讀取資料
         $.ajax({
             url: '{{route('get_storeHome_data')}}',
             method: 'POST',
@@ -243,9 +252,11 @@
                     $.each(store, function (index, value) {
                         // console.log(value['info_name']);
                         // console.log(index);
+
                         let row = `
-                        <div class="bg-gray-100 border-b grid grid-cols-4">
-                            <div class="   text-sm text-gray-900 font-light px-2 py-2 ">
+                        <div class="detail_in bg-gray-100 border-b grid grid-cols-4" >
+                            <input class="hidden detail_id" value="${value['info_id']}">
+                            <div class=" text-sm text-gray-900 font-light px-2 py-2 ">
                                 ${value['info_name']}
                             </div>
                             <div class="  text-sm text-gray-900 font-light px-2 py-2 ">
@@ -268,16 +279,56 @@
                     })
                     {{--$("#tbody").append({{$to->links(2) }});--}}
                 }
-                if (res.length === 0) {
-                    $("tbody").append(
-                        "<tr><td colspan='4' class='text-center'>查無資料</td></tr>"
-                    );
-                }
+                let id= $('.detail_id').valueOf();
+               $('.detail_in').click(function (){
+                   // $.route('get_storeDetail_page');
+                   // $(this).val()
+                   id=$(this).find("input").val()
+                   // console.log(id)
+                   window.location.href=`{{route('get_storeDetail_page')}}?noti_id=${id}`;
+               })
+
             },
             error: function (res) {
-                window.alert('noooo');
+                window.alert('連線失敗');
             }
         })
     });
+
+    //新增資料
+    function sure_add(){
+        let add_name=$('#add_name').val();
+        let add_phone=$('#add_phone').val();
+        let add_address=$('#add_address').val();
+
+
+        $.ajax({
+            url: '{{route('insert_storeHome_data')}}',
+            method: 'POST',
+            data: {
+                _token: '{{csrf_token()}}',
+                add_name: add_name,
+                add_phone: add_phone,
+                add_address: add_address,
+            },
+            success: function (res) {
+                console.log(res)
+                if (res=='err'){Swal.fire(
+                    '新增失敗',
+                    '請重新檢查資料填寫內容',
+                    'error'
+                )}
+                if (res=='success'){Swal.fire(
+                    '成功新增店家',
+                    '',
+                    'success'
+                )}
+            },
+            error: function (res) {
+                window.alert('連線失敗');
+            }
+        })
+    }
+
 </script>
 </html>
