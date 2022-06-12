@@ -53,20 +53,16 @@
 
             <!-- nav -->
             <nav class="lg:ml-3 md:ml-0 grid">
-
-                <a href=""
+                <a href="{{route('get_notiHome_page')}}"
                    class="mb-3 flex block py-2 px-3 rounded lg:text-xl md:text-sm hover:bg-teal-700 hover:text-white">
-
                     首頁
                 </a>
-                <a href=""
+                <a href="{{route('get_storeHome_page')}}"
                    class="mb-3 flex block py-2 px-3 rounded lg:text-xl md:text-sm hover:bg-teal-700 hover:text-white">
-
                     店家管理
                 </a>
-                <a href=""
+                <a href="{{route('get_login_page')}}"
                    class="mb-3 flex block py-2 px-3 rounded lg:text-xl md:text-sm hover:bg-teal-700 hover:text-white">
-
                     登出
                 </a>
             </nav>
