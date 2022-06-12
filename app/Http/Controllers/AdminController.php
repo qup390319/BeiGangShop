@@ -89,12 +89,36 @@ class AdminController extends Controller
         return redirect()->route('get_notiHome_page');
 }
 
-    //詳細通知 畫面 storeHome
+    //現有店家 畫面 storeHome
     public function get_storeHome_page()
     {
-        return view('administrator.storeHome');
+        //店家
+        $store=DB::table('t_store_info')
+//                ->get();
+            ->paginate(5);
+        return view('administrator.storeHome',$store);
     }
-    //詳細通知 畫面 storeDetail
+
+    public function get_storeHome_data(Request $request)
+    {
+        try{
+            //店家
+            $store=DB::table('t_store_info')
+//                ->get();
+                ->paginate(5);
+
+            //回傳資料
+            $result=[
+                'store'=>$store,
+            ];
+
+            return $result;
+        }catch (\Exception $exception){
+
+        }
+
+    }
+    //店家詳細資訊 storeDetail
     public function get_storeDetail_page()
     {
         return view('administrator.storeDetail');

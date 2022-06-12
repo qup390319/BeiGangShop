@@ -24,6 +24,8 @@ Route::post('/admin/notiDetail', [AdminController::class, 'post_notiDetail_page'
 
 //現有店家
 Route::get('/admin/storeHome', [AdminController::class, 'get_storeHome_page'])->name('get_storeHome_page');
+Route::post('/admin/storeHome', [AdminController::class, 'get_storeHome_data'])->name('get_storeHome_data');
+
 Route::get('/admin/storeDetail', [AdminController::class, 'get_storeDetail_page'])->name('get_storeDetail_page');
 
 //主畫面
