@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"/>
@@ -174,8 +175,7 @@
                       transition
                       ease-in-out
                       m-0
-                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-                    " id="exampleFormControlInput1" placeholder="時間" value="{{$noti_data->noti_time}}"/>
+                    " id="exampleFormControlInput1" readonly="readonly" placeholder="時間" value="{{$noti_data->noti_time}}"/>
                 </div>
             </div>
             <!-- /內容 -->
@@ -192,10 +192,8 @@
                            class="{{$noti_data->noti_state=='結案'?'bg-red-500 text-white':'bg-red-100 text-gray-400'}} rounded-full inline-block px-8 py-2.5  font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-400 hover:shadow-lg focus:bg-red-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-500 active:shadow-lg transition duration-150 ease-in-out"
                            value="結案">
                 </div>
-
             </div>
             <!-- /狀態按鈕 -->
-
         </div>
     </form>
 

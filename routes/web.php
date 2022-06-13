@@ -28,6 +28,8 @@ Route::post('/admin/storeHome', [AdminController::class, 'get_storeHome_data'])-
 Route::post('/admin/storeHome_insert', [AdminController::class, 'insert_storeHome_data'])->name('insert_storeHome_data');
 
 Route::get('/admin/storeDetail', [AdminController::class, 'get_storeDetail_page'])->name('get_storeDetail_page');
+Route::post('/admin/storeDetail', [AdminController::class, 'get_storeDetail_data'])->name('get_storeDetail_data');
+Route::post('/admin/storeDetail_insert', [AdminController::class, 'insert_storeDetail_data'])->name('insert_storeDetail_data');
 
 //主畫面
 Route::get('/', [HomeController::class, 'get_home_page'])->name('get_home_page');

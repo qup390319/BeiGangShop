@@ -247,7 +247,7 @@
                 let store = res['store']['data'];
                 // let page=res['store']['data'];
 
-                console.log(res['store']['current_page'])
+                console.log(res['store'])
                 if (store.length > 0) {
                     $.each(store, function (index, value) {
                         // console.log(value['info_name']);
@@ -285,7 +285,7 @@
                    // $(this).val()
                    id=$(this).find("input").val()
                    // console.log(id)
-                   window.location.href=`{{route('get_storeDetail_page')}}?noti_id=${id}`;
+                   window.location.href=`{{route('get_storeDetail_page')}}?info_id=${id}`;
                })
 
             },
@@ -315,7 +315,7 @@
                 console.log(res)
                 if (res=='err'){Swal.fire(
                     '新增失敗',
-                    '請重新檢查資料填寫內容',
+                    '請重新檢查填寫內容',
                     'error'
                 )}
                 if (res=='success'){Swal.fire(

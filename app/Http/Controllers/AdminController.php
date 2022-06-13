@@ -12,6 +12,7 @@ class AdminController extends Controller
     {
         return view('administrator.adminLogin');
     }
+
     //登入驗證
     public function post_login_page(Request $request)
     {
@@ -25,9 +26,9 @@ class AdminController extends Controller
             ->first();
 
         //登入 回傳頁面
-        if ($user_data!=''){
+        if ($user_data != '') {
             return redirect()->route('get_notiHome_page');
-        }else{
+        } else {
             return redirect()->route('get_login_page');
         }
     }
@@ -36,19 +37,19 @@ class AdminController extends Controller
     public function get_notiHome_page(Request $request)
     {
         //店家總數
-        $quantity=DB::table('t_store_info')
+        $quantity = DB::table('t_store_info')
             ->count('info_name');
 
         //資料表格內容
-        $data=DB::table('t_notifications')
-        ->get();
+        $data = DB::table('t_notifications')
+            ->get();
         //回傳資料
-        $result=[
-            'quantity'=>$quantity,
-            'data'=>$data,
+        $result = [
+            'quantity' => $quantity,
+            'data' => $data,
         ];
 
-        return view('administrator.notiHome',$result);
+        return view('administrator.notiHome', $result);
     }
 
     //詳細通知 畫面 notiHome
@@ -62,65 +63,82 @@ class AdminController extends Controller
             ->where('noti_id', $noti_id)
             ->first();
         //回傳資料
-        $result=[
-            'noti_data'=>$noti_data,
+        $result = [
+            'noti_data' => $noti_data,
         ];
-        return view('administrator.notiDetail',$result);
+        return view('administrator.notiDetail', $result);
     }
+
     //詳細通知 更改狀態
     public function post_notiDetail_page(Request $request)
     {
         //獲取 通知id
         $noti_id = $request->get('noti_id');
-        $noti_state=$request->get('noti_state');
-        if($noti_state==='待處理'){
+        $noti_state = $request->get('noti_state');
+        if ($noti_state === '待處理') {
             DB::table("t_notifications")
                 ->where('noti_id', $noti_id)
                 ->update([
                     'noti_state' => '待處理',
+                    'noti_category'=>$request->get('noti_category'),
+                    'noti_detail'=>$request->get('noti_detail'),
+                    'noti_solution'=>$request->get('noti_solution'),
                 ]);
-        }else{
+        } else {
             DB::table("t_notifications")
                 ->where('noti_id', $noti_id)
                 ->update([
                     'noti_state' => '結案',
+                    'noti_category'=>$request->get('noti_category'),
+                    'noti_detail'=>$request->get('noti_detail'),
+                    'noti_solution'=>$request->get('noti_solution'),
                 ]);
         }
+
+
+
         return redirect()->route('get_notiHome_page');
-}
+    }
 
     //現有店家 畫面 storeHome
     public function get_storeHome_page()
     {
         //店家
-        $store=DB::table('t_store_info')
+        $store = DB::table('t_store_info')
 //                ->get();
             ->paginate(5);
-        return view('administrator.storeHome',$store);
+        return view('administrator.storeHome', $store);
     }
 
     public function get_storeHome_data(Request $request)
     {
-        try{
+        try {
             //店家
-            $store=DB::table('t_store_info')
+            $store = DB::table('t_store_info')
 //                ->get();
                 ->paginate(5);
 
             //回傳資料
-            $result=[
-                'store'=>$store,
+            $result = [
+                'store' => $store,
             ];
             return $result;
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
         }
     }
+
     public function insert_storeHome_data(Request $request)
     {
-        try{
-            if ($request->add_name===null){return 'err';}
-            if ($request->add_phone===null){return 'err';}
-            if ($request->add_address===null){return 'err';}
+        try {
+            if ($request->add_name === null) {
+                return 'err';
+            }
+            if ($request->add_phone === null) {
+                return 'err';
+            }
+            if ($request->add_address === null) {
+                return 'err';
+            }
 
             //店家
             DB::table('t_store_info')
@@ -132,15 +150,76 @@ class AdminController extends Controller
 
 
             return 'success';
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
 
         }
-
     }
 
-    //店家詳細資訊 storeDetail
-    public function get_storeDetail_page()
+    //店家詳細資訊 頁面 storeDetail
+    public function get_storeDetail_page(Request $request)
     {
-        return view('administrator.storeDetail');
+        $id = $request->info_id;
+
+        //店家
+        $store = DB::table('t_store_info')
+            ->where('info_id', $id)
+            ->first();
+
+        //回傳資料
+        $result = [
+            'store' => $store,
+        ];
+        return view('administrator.storeDetail', $result);
+    }
+
+    public function get_storeDetail_data(Request $request)
+    {
+        try {
+//            return $request->id;
+            //店家
+            $store = DB::table('t_store_info')
+                ->where('info_id', $request->id)
+                ->first();
+            $store_name=$store->info_name;
+
+
+            $comment = DB::table('t_store_comment')
+                ->where('comment_name', $store_name)
+                ->get();
+
+            //回傳資料
+            $result = [
+                'comment' => $comment,
+            ];
+            return $result;
+        } catch (\Exception $exception) {
+        }
+    }
+
+    public function insert_storeDetail_data(Request $request)
+    {
+        try {
+
+            if ($request->comment_content === null) {
+                return 'err';
+            }
+            if ($request->score == 0) {
+                return 'err';
+            }
+
+
+            //店家
+            DB::table('t_store_comment')
+                ->insert([
+                    'comment_name'=>$request->comment_name,
+                    'comment_content' => $request->comment_content,
+                    'comment_score'=>$request->score,
+                ]);
+
+
+            return 'success';
+        } catch (\Exception $exception) {
+
+        }
     }
 }
