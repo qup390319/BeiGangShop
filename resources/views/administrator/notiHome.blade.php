@@ -98,50 +98,52 @@
             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="overflow-hidden">
-                        <table class="min-w-full ">
-                            <thead class="bg-white">
-                            <tr>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
-                                    類別
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
-                                    摘要
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
-                                    時間
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
-                                    聯絡人信箱
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
-                                    進度
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody id="t-noti">
-                            {{--單行--}}
-                            @foreach($data as $key=>$row)
-                                <tr class="bg-gray-100 border-b" onclick="window.location.href=`{{route('get_notiDetail_page')}}?noti_id={{$row->noti_id}}`">
-                                        <td  class="text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap">
+                        <div class="w-full ">
+                            <div class="bg-white">
+                                <div class="flex grid grid-cols-5">
+                                    <div scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
+                                        類別
+                                    </div>
+                                    <div scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
+                                        摘要
+                                    </div>
+                                    <div scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
+                                        時間
+                                    </div>
+                                    <div scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
+                                        聯絡人信箱
+                                    </div>
+                                    <div scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
+                                        進度
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="t-noti" class="">
+                                {{--單行--}}
+                                @foreach($data as $key=>$row)
+                                    <div class="flex bg-gray-100 border-b grid grid-cols-5 w-full mb-1"
+                                         onclick="window.location.href=`{{route('get_notiDetail_page')}}?noti_id={{$row->noti_id}}`">
+                                        <div class="text-sm text-gray-900 font-light px-2 py-2 ">
                                             {{$row->noti_category}}
-                                        </td>
-                                        <td class="text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap">
-                                            {{$row->noti_abstract}}
-                                        </td>
-                                        <td class="text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap">
+                                        </div>
+                                        <div
+                                            class="truncate text-sm text-gray-900 font-light px-2 py-2 ">
+                                            {{$row->noti_detail}}
+                                        </div>
+                                        <div class="truncate text-sm text-gray-900 font-light px-2 py-2 ">
                                             {{$row->noti_time}}
-                                        </td>
-                                        <td class="text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap">
+                                        </div>
+                                        <div class="truncate text-sm text-gray-900 font-light px-2 py-2 ">
                                             {{$row->noti_sender_mail}}
-                                        </td>
-                                        <td class="text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap">
+                                        </div>
+                                        <div class="text-sm text-gray-900 font-light px-2 py-2">
                                             {{$row->noti_state}}
-                                        </td>
-                                    </tr>
-                            @endforeach
-                            {{--/單行--}}
-                            </tbody>
-                        </table>
+                                        </div>
+                                    </div>
+                                @endforeach
+                                {{--/單行--}}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
