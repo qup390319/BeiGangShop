@@ -122,7 +122,7 @@
                 <div class="my-2">
                     <label for="exampleFormControlInput1" class="form-label inline-blocktext-gray-700 w-full">詳細內容
                     </label>
-                    <input name="noti_detail" type="text" class="
+                    <textarea name="noti_detail" type="text" class="
                       form-control
                       block
                       w-full
@@ -137,7 +137,8 @@
                       ease-in-out
                       m-0
                       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-                    " id="exampleFormControlInput1" placeholder="詳細內容" value="{{$noti_data->noti_detail}}"/>
+                    " id="exampleFormControlInput1" placeholder="詳細內容" />{{$noti_data->noti_detail}}
+                    </textarea>
                 </div>
                 <div class="my-2">
                     <label for="exampleFormControlInput1"
