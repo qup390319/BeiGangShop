@@ -6,11 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -28,6 +26,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+
     <style>
         #map {
             width: 100%;
@@ -738,7 +741,7 @@
                     </div>
 
                     <div class="flex justify-center">
-                        <button type="submit" class="
+                        <button  class="
                             w-32
                             px-6
                             py-2.5
@@ -799,7 +802,7 @@
             <div
                 class=" m-6 mb-10 flex justify-center content-center  p-6 block  rounded-lg shadow-lg bg-white w-full mt-4 grid grid-cols-2 gap-24">
                 <div class=" grid content-center">
-                    <form class="  mx-5 ">
+                    <div class="  mx-5 ">
                         <div class="">
                             <div class="">
                                 <div class="text-2xl font-bold">
@@ -807,7 +810,7 @@
                                 </div>
                                 <div class="form-group mb-6">
                                     <label for="opinion" class="form-label inline-block mb-2 text-gray-700"></label>
-                                    <textarea class="
+                                    <textarea id="insert_problem" class="
                 form-control
                 block
                 w-full
@@ -823,12 +826,12 @@
                 ease-in-out
                 m-0
                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-              " id="opinion" rows="5" placeholder="輸入問題"></textarea>
+              " id="opinion" rows="5" placeholder="輸入問題" ></textarea>
                                 </div>
                                 <div class="form-group mb-6">
                                     <label for="email" class="form-label inline-block mb-2 text-gray-700">
                                     </label>
-                                    <input type="email" class="form-control block
+                                    <input id="insert_email" type="email" class="form-control block
                                   w-full
                                   px-3
                                   py-1.5
@@ -848,7 +851,7 @@
                         </div>
 
                         <div class="flex justify-end">
-                            <button type="submit" class="
+                            <button onclick="submit_problem()" class="
                                 w-20
                                 px-6
                                 py-2.5
@@ -869,8 +872,7 @@
                                 duration-150
                                 ease-in-out">送出</button>
                         </div>
-
-                    </form>
+                    </div>
                 </div>
 
                 <div class="">
@@ -886,8 +888,6 @@
             </div>
         </div>
     </div>
-
-
 
 </div>
 
@@ -982,6 +982,38 @@
     $.getJSON('YOURFILE.json', function (r) {
         L.geoJSON(r, { color: '#333' }).addTo(map);
     });
+
+    function submit_problem(){
+        let insert_problem=$('#insert_problem').val();
+        let insert_email=$('#insert_email').val();
+        $.ajax({
+            url: '{{route('insert_problem_data')}}',
+            method: 'POST',
+            data: {
+                _token: '{{csrf_token()}}',
+                problem: insert_problem,
+                email: insert_email,
+            },
+            success: function (res) {
+                console.log(res);
+                // window.alert('success')
+                if (res=='err'){Swal.fire(
+                    '新增失敗',
+                    '請重新檢查填寫內容',
+                    'error'
+                )}
+                if (res=='success'){Swal.fire(
+                    '成功新增店家',
+                    '',
+                    'success'
+                )}
+            },
+            error: function (res) {
+                window.alert('連線失敗');
+            }
+        })
+    }
+
 </script>
 
 </html>

@@ -33,4 +33,5 @@ Route::post('/admin/storeDetail_insert', [AdminController::class, 'insert_storeD
 
 //主畫面
 Route::get('/', [HomeController::class, 'get_home_page'])->name('get_home_page');
+Route::post('/insert_problem_data', [HomeController::class, 'insert_problem_data'])->name('insert_problem_data');
 
