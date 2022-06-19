@@ -22,6 +22,7 @@
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script src="{{asset('assets/jquery.qrcode.min.js')}}"></script>
 
     <!-- 地圖 -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
@@ -1193,44 +1194,48 @@
                                         </div>
                                         {{--/單樣餐點--}}
                                     </div>
-                                    {{--頁碼--}}
-                                    <div class="flex pt-5">
-                                        <div class="flex justify-center">
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="flex list-style-none">
-                                                    <li class="page-item"><a
-                                                            class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-                                                            href="#">
-                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                 class="h-10 w-10 grid content-center text-gray-100" viewBox="0 0 20 20"
-                                                                 fill="currentColor">
-                                                                <path fill-rule="evenodd"
-                                                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z"
-                                                                      clip-rule="evenodd"/>
-                                                            </svg>
-                                                        </a></li>
-                                                    <li class="page-item"><a
-                                                            class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-                                                            href="#">2</a></li>
-                                                    <li class="page-item"><a
-                                                            class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-                                                            href="#">3</a></li>
-                                                    <li class="page-item"><a
-                                                            class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-                                                            href="#">
-                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                 class="h-10 w-10 grid content-center text-gray-500" viewBox="0 0 20 20"
-                                                                 fill="currentColor">
-                                                                <path fill-rule="evenodd"
-                                                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
-                                                                      clip-rule="evenodd"/>
-                                                            </svg>
-                                                        </a></li>
-                                                </ul>
-                                            </nav>
+                                    <div class="flex w-full pt-2 justify-between">
+                                        {{--頁碼--}}
+                                        <div class="flex pt-5 grid content-end">
+                                            <div class="flex justify-center">
+                                                <nav aria-label="Page navigation example">
+                                                    <ul class="flex list-style-none">
+                                                        <li class="page-item"><a
+                                                                class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                                                href="#">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                     class="h-10 w-10 grid content-center text-gray-100" viewBox="0 0 20 20"
+                                                                     fill="currentColor">
+                                                                    <path fill-rule="evenodd"
+                                                                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z"
+                                                                          clip-rule="evenodd"/>
+                                                                </svg>
+                                                            </a></li>
+                                                        <li class="page-item"><a
+                                                                class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                                                href="#">2</a></li>
+                                                        <li class="page-item"><a
+                                                                class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                                                href="#">3</a></li>
+                                                        <li class="page-item"><a
+                                                                class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                                                href="#">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                     class="h-10 w-10 grid content-center text-gray-500" viewBox="0 0 20 20"
+                                                                     fill="currentColor">
+                                                                    <path fill-rule="evenodd"
+                                                                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                                                                          clip-rule="evenodd"/>
+                                                                </svg>
+                                                            </a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
                                         </div>
+                                        {{--/頁碼--}}
+                                        <div class="qr_code pt-5"></div>
                                     </div>
-                                    {{--/頁碼--}}
+
                                 </div>
                                 {{--/店家資訊內頁--}}
 
@@ -1506,44 +1511,49 @@
                                         </div>
                                         {{--/單人評論--}}
                                     </div>
-                                    {{--頁碼--}}
-                                    <div class="flex pt-5">
-                                        <div class="flex justify-center">
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="flex list-style-none">
-                                                    <li class="page-item"><a
-                                                            class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-                                                            href="#">
-                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                 class="h-10 w-10 grid content-center text-gray-100" viewBox="0 0 20 20"
-                                                                 fill="currentColor">
-                                                                <path fill-rule="evenodd"
-                                                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z"
-                                                                      clip-rule="evenodd"/>
-                                                            </svg>
-                                                        </a></li>
-                                                    <li class="page-item"><a
-                                                            class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-                                                            href="#">2</a></li>
-                                                    <li class="page-item"><a
-                                                            class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-                                                            href="#">3</a></li>
-                                                    <li class="page-item"><a
-                                                            class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-                                                            href="#">
-                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                 class="h-10 w-10 grid content-center text-gray-500" viewBox="0 0 20 20"
-                                                                 fill="currentColor">
-                                                                <path fill-rule="evenodd"
-                                                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
-                                                                      clip-rule="evenodd"/>
-                                                            </svg>
-                                                        </a></li>
-                                                </ul>
-                                            </nav>
+                                    <div class="flex w-full pt-2">
+                                        <div class="flex w-full pt-2 justify-between">
+                                            {{--頁碼--}}
+                                            <div class="flex pt-5 grid content-end">
+                                                <div class="flex justify-center">
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul class="flex list-style-none">
+                                                            <li class="page-item"><a
+                                                                    class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                                                    href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                         class="h-10 w-10 grid content-center text-gray-100" viewBox="0 0 20 20"
+                                                                         fill="currentColor">
+                                                                        <path fill-rule="evenodd"
+                                                                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z"
+                                                                              clip-rule="evenodd"/>
+                                                                    </svg>
+                                                                </a></li>
+                                                            <li class="page-item"><a
+                                                                    class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                                                    href="#">2</a></li>
+                                                            <li class="page-item"><a
+                                                                    class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                                                    href="#">3</a></li>
+                                                            <li class="page-item"><a
+                                                                    class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                                                    href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                         class="h-10 w-10 grid content-center text-gray-500" viewBox="0 0 20 20"
+                                                                         fill="currentColor">
+                                                                        <path fill-rule="evenodd"
+                                                                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                                                                              clip-rule="evenodd"/>
+                                                                    </svg>
+                                                                </a></li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                            {{--/頁碼--}}
+                                            <div class="qr_code pt-5"></div>
                                         </div>
                                     </div>
-                                    {{--/頁碼--}}
                                 </div>
                                 {{--/評價--}}
                             </div>
@@ -1695,11 +1705,15 @@
     function look_info_btn() {
         $('#modal_info_content').removeClass('hidden')
         $('#modal_recommend_content').addClass('hidden')
+        $('#look_info').ATTR('Active');
+
     }
 
     function look_recommend_btn() {
         $('#modal_recommend_content').removeClass('hidden')
         $('#modal_info_content').addClass('hidden')
+        $('#look_recommend').ATTR('Active');
+
     }
 
 
@@ -1954,6 +1968,7 @@
         });
     }
 
+    $('.qr_code').qrcode({ width: 100,height: 100,text:'https://www.facebook.com/057832665.JIA.YUN.BUN.SHOP'});
 
 </script>
 
