@@ -49,27 +49,29 @@
 
     </div>
 
-    <!-- side bar -->
-
-    <div class="sidebar bg-teal-900 text-blue-100 w-3/5 md:w-1/5 space-y-6 md:px-1 px-2 md:px-10 py-7 absolute inset-y-0 left-0 transform
+    <div class="sidebar bg-teal-900 text-blue-100 w-3/5  md:w-full md:flex space-y-6 md:px-1 px-2 md:px-10 py-7 absolute inset-y-0 left-0 transform
 -translate-x-full transition duration-200 ease-in-out md:relative md:translate-x-0">
         <!-- logo -->
 
-
         <!-- nav -->
-        <nav class="lg:ml-3 md:ml-0 grid">
-            <a href="{{route('get_notiHome_page')}}"
-               class="mb-3 flex block py-2 px-3 rounded lg:text-xl md:text-sm hover:bg-teal-700 hover:text-white">
-                首頁
-            </a>
-            <a href="{{route('get_storeHome_page')}}"
-               class="mb-3 flex block py-2 px-3 rounded lg:text-xl md:text-sm hover:bg-teal-700 hover:text-white">
-                店家管理
-            </a>
-            <a href="{{route('get_login_page')}}"
-               class="mb-3 flex block py-2 px-3 rounded lg:text-xl md:text-sm hover:bg-teal-700 hover:text-white">
-                登出
-            </a>
+        <nav class="w-full flex grid justify-between lg:ml-3 md:ml-0 md:flex">
+            <div class="lg:flex">
+                <a href="{{route('get_notiHome_page')}}"
+                   class="w-24 mb-3 lg:flex block py-2 px-3 rounded lg:text-xl md:text-sm hover:bg-teal-700 hover:text-white">
+                    首頁
+                </a>
+                <a href="{{route('get_storeHome_page')}}"
+                   class="w-32 mb-3 lg:flex block py-2 px-3 rounded lg:text-xl md:text-sm hover:bg-teal-700 hover:text-white">
+                    店家管理
+                </a>
+            </div>
+            <div class="flex">
+                <a href="{{route('get_login_page')}}"
+                   class="mb-3 flex block py-2 px-3 rounded grid lg:text-xl md:text-sm md:justify-end hover:bg-teal-700 hover:text-white">
+                    登出
+                </a>
+            </div>
+
         </nav>
 
     </div>
