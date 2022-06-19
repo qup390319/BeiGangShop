@@ -24,7 +24,7 @@
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-    <link rel="stylesheet" href="./style.css"/>
+
     <title>北港美食大補帖管理員</title>
 </head>
 <body>
@@ -133,7 +133,7 @@
                                 @foreach($data as $key=>$row)
                                     <div class="flex bg-gray-100 border-b grid grid-cols-5 w-full mb-1"
                                          onclick="window.location.href=`{{route('get_notiDetail_page')}}?noti_id={{$row->noti_id}}`">
-                                        <div class="text-sm text-gray-900 font-light px-2 py-2 ">
+                                        <div class=" truncate text-sm text-gray-900 font-light px-2 py-2 ">
                                             {{$row->noti_category}}
                                         </div>
                                         <div

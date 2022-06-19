@@ -105,8 +105,10 @@ class AdminController extends Controller
     {
         //店家
         $store = DB::table('t_store_info')
-//                ->get();
+            ->orderBy('info_id', 'desc')
+            //                ->get();
             ->paginate(5);
+//        dd($store);
         return view('administrator.storeHome', $store);
     }
 
@@ -115,6 +117,7 @@ class AdminController extends Controller
         try {
             //店家
             $store = DB::table('t_store_info')
+                ->orderBy('info_id', 'desc')
 //                ->get();
                 ->paginate(5);
 
@@ -123,6 +126,20 @@ class AdminController extends Controller
                 'store' => $store,
             ];
             return $result;
+        } catch (\Exception $exception) {
+        }
+    }
+
+    public function delete_store(Request $request)
+    {
+        try {
+            $id = $request->info_id;
+
+            //刪除店家
+            DB::table('t_store_info')
+                ->where('info_id',$id)
+                ->delete();
+            return 'success';
         } catch (\Exception $exception) {
         }
     }
@@ -186,10 +203,14 @@ class AdminController extends Controller
             $comment = DB::table('t_store_comment')
                 ->where('comment_name', $store_name)
                 ->get();
+            $comment_score = DB::table('t_store_comment')
+                ->where('comment_score', $store_name)
+                ->get();
 
             //回傳資料
             $result = [
                 'comment' => $comment,
+                'comment_score'=>$comment_score,
             ];
             return $result;
         } catch (\Exception $exception) {

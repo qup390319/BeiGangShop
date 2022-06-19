@@ -25,7 +25,6 @@
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-    <link rel="stylesheet" href="./style.css"/>
     <title>北港美食大補帖管理員</title>
 </head>
 <body>

@@ -30,6 +30,8 @@ Route::post('/admin/storeHome_insert', [AdminController::class, 'insert_storeHom
 Route::get('/admin/storeDetail', [AdminController::class, 'get_storeDetail_page'])->name('get_storeDetail_page');
 Route::post('/admin/storeDetail', [AdminController::class, 'get_storeDetail_data'])->name('get_storeDetail_data');
 Route::post('/admin/storeDetail_insert', [AdminController::class, 'insert_storeDetail_data'])->name('insert_storeDetail_data');
+Route::post('/admin/delete_store', [AdminController::class, 'delete_store'])->name('delete_store');
+
 
 //熱門餐廳功能
 Route::post('/admin/getStoreData', [AdminController::class, 'get_store_data'])->name('get_store_data');

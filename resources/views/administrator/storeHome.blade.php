@@ -28,7 +28,6 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 
-    <link rel="stylesheet" href="./style.css"/>
     <title>北港美食大補帖管理員</title>
 </head>
 
@@ -185,7 +184,8 @@
                                     <div scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left">
                                         地址
                                     </div>
-                                    <div scope="col" class="text-sm font-medium text-gray-900 px-2 py-2 text-left flex justify-center">
+                                    <div scope="col"
+                                         class="text-sm font-medium text-gray-900 px-2 py-2 text-left flex justify-center">
                                         新增
                                     </div>
                                 </div>
@@ -201,10 +201,12 @@
                                     <div class="text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap">
                                         <input id="add_address" class="w-full px-1 py-1" placeholder="地址">
                                     </div>
-                                    <div class="flex justify-center text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap">
+                                    <div
+                                        class="flex justify-center text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap">
                                         <button onclick="sure_add()">
-                                            <svg  xmlns="http://www.w3.org/2000/svg" class="flex justify-center h-6 w-6 text-blue-500"
-                                                  viewBox="0 0 20 20" fill="currentColor">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 class="flex justify-center h-6 w-6 text-blue-500"
+                                                 viewBox="0 0 20 20" fill="currentColor">
                                                 <path fill-rule="evenodd"
                                                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
                                                       clip-rule="evenodd"/>
@@ -256,24 +258,30 @@
                         // console.log(index);
 
                         let row = `
-                        <div class="detail_in bg-gray-100 border-b grid grid-cols-4" >
-                            <input class="hidden detail_id" value="${value['info_id']}">
-                            <div class=" text-sm text-gray-900 font-light px-2 py-2 ">
-                                ${value['info_name']}
-                            </div>
-                            <div class="  text-sm text-gray-900 font-light px-2 py-2 ">
-                                ${value['info_phone']}
-                            </div>
-                            <div class="  text-sm text-gray-900 font-light px-2 py-2 ">
-                                ${value['info_address']}
-                            </div>
-                            <div class="flex grid content-center w-full text-sm text-gray-900 font-light px-2 py-2 ">
-                                <svg xmlns="http://www.w3.org/2000/svg" class=" w-full h-6 w-6 text-red-600"
-                                     viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                          d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                                          clip-rule="evenodd"/>
-                                </svg>
+                        <div class="flex grid bg-gray-100 border-b ">
+                            <div class="flex w-full">
+                                <input class="hidden detail_id" value="${value['info_id']}">
+                                <div class="flex w-3/4 detail_in">
+                                    <div class="flex w-1/3 text-sm text-gray-900 font-light px-2 py-2 ">
+                                        ${value['info_name']}
+                                    </div>
+                                    <div class="flex w-1/3 text-sm text-gray-900 font-light px-2 py-2 ">
+                                        ${value['info_phone']}
+                                    </div>
+                                    <div class="flex w-1/3 text-sm text-gray-900 font-light px-2 py-2 ">
+                                        ${value['info_address']}
+                                    </div>
+                                </div>
+
+
+                                <div class="delete_store flex  w-1/4 grid content-center justify-center text-sm text-gray-900 font-light px-2 py-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600"
+                                         viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                              d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                              clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                         `;
@@ -281,14 +289,18 @@
                     })
                     {{--$("#tbody").append({{$to->links(2) }});--}}
                 }
-                let id= $('.detail_id').valueOf();
-               $('.detail_in').click(function (){
-                   // $.route('get_storeDetail_page');
-                   // $(this).val()
-                   id=$(this).find("input").val()
-                   // console.log(id)
-                   window.location.href=`{{route('get_storeDetail_page')}}?info_id=${id}`;
-               })
+                let id = $('.detail_id').valueOf();
+                $('.detail_in').click(function () {
+                    // $.route('get_storeDetail_page');
+                    // $(this).val()
+                    id = $(this).siblings("input").val()
+                    // console.log(id)
+                    window.location.href = `{{route('get_storeDetail_page')}}?info_id=${id}`;
+                })
+                $('.delete_store').click(function () {
+                    id = $(this).siblings("input").val();
+                    delete_store_post(id);
+                })
 
             },
             error: function (res) {
@@ -297,11 +309,43 @@
         })
     });
 
+    function delete_store_post(id){
+        $.ajax({
+            url: '{{route('delete_store')}}',
+            method: 'POST',
+            data: {
+                _token: '{{csrf_token()}}',
+                info_id:id,
+            },success:function (res){
+                console.log(res);
+                if (res == 'err') {
+                    Swal.fire(
+                        '刪除失敗',
+                        '請重新網路狀態',
+                        'error'
+                    )
+                }
+                if (res == 'success') {
+                    Swal.fire(
+                        '成功刪除店家',
+                        '',
+                        'success'
+                    ).then(()=>{
+                        window.location.reload();
+                    })
+                }
+            },
+            error:function (res){
+
+            }
+        })
+    }
+
     //新增資料
-    function sure_add(){
-        let add_name=$('#add_name').val();
-        let add_phone=$('#add_phone').val();
-        let add_address=$('#add_address').val();
+    function sure_add() {
+        let add_name = $('#add_name').val();
+        let add_phone = $('#add_phone').val();
+        let add_address = $('#add_address').val();
 
 
         $.ajax({
@@ -315,16 +359,22 @@
             },
             success: function (res) {
                 console.log(res)
-                if (res=='err'){Swal.fire(
-                    '新增失敗',
-                    '請重新檢查填寫內容',
-                    'error'
-                )}
-                if (res=='success'){Swal.fire(
-                    '成功新增店家',
-                    '',
-                    'success'
-                )}
+                if (res == 'err') {
+                    Swal.fire(
+                        '新增失敗',
+                        '請重新檢查填寫內容',
+                        'error'
+                    )
+                }
+                if (res == 'success') {
+                    Swal.fire(
+                        '成功新增店家',
+                        '',
+                        'success'
+                    ).then(()=>{
+                        window.location.reload();
+                    })
+                }
             },
             error: function (res) {
                 window.alert('連線失敗');

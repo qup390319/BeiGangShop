@@ -27,7 +27,6 @@
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-    <link rel="stylesheet" href="./style.css"/>
     <title>北港美食大補帖管理員</title>
 </head>
 <body>
@@ -333,8 +332,13 @@
                         <div class="font-light text-sm grid content-center">
                             評論${index + 1}
                         </div>
-                        <div class="col-span-3 text-sm font-light grid content-center">
-                            ${value['comment_content']}
+                        <div class=" text-sm font-light grid content-center">
+                            ${value['comment_score']}顆星
+                        </div>
+                        <div class="col-span-2 text-sm font-light grid content-center">
+                            <p class="truncate">
+                             ${value['comment_content']}
+                            </p>
                         </div>
                         <div class="font-light grid content-center">
                             <svg xmlns="http://www.w3.org/2000/svg"
@@ -474,7 +478,9 @@
                         '成功新增評論',
                         '',
                         'success'
-                    )
+                    ).then(()=>{
+                        window.location.reload();
+                    })
                 }
             },
             error: function (res) {

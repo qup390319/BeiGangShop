@@ -49,7 +49,6 @@
         }
     </style>
 
-    <link rel="stylesheet" href="./style.css"/>
     <title>北港美食大補帖</title>
 </head>
 
