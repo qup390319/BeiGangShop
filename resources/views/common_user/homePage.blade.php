@@ -170,7 +170,7 @@
 
 
 <!-- 熱門餐廳 -->
-<div class="  bg-orange-400  flex w-full mt-7 ">
+<div class="flex w-full mt-7 ">
     <div class=" w-1/4 grid justify-items-center bg-gray-100 hidden xl:block lg:hidden">
         <div class=" grid place-content-center w-full ">
             <div class="relative w-64  top-64 ">
@@ -193,7 +193,7 @@
         </div>
     </div>
 
-    <div class="w-3/4 bg-gray-50 grid justify-items-center">
+    <div class="w-3/4 lg:w-full md:w-full sm:w-full bg-gray-50 grid justify-items-center">
         <div class=" w-full">
             <!-- 上排 -->
             <div class="flex items-center justify-end  bg-gray-50 w-full h-32">
@@ -481,7 +481,7 @@
 </div>
 
 <!-- 附近餐廳 -->
-<div class="  bg-orange-400  flex w-full mt-7 ">
+<div class="flex w-full mt-7 ">
 
     <div class=" w-1/4 grid justify-items-center bg-gray-100 hidden xl:block lg:hidden">
         <div class=" grid place-content-center w-full ">
@@ -505,7 +505,7 @@
         </div>
     </div>
 
-    <div class="w-3/4 bg-gray-50 grid justify-items-center">
+    <div class="w-3/4 lg:w-full md:w-full sm:w-full bg-gray-50 grid justify-items-center">
         <div class=" w-full">
             <!-- 上排 -->
             <div class="flex items-center justify-end  bg-gray-50 w-full h-32">
@@ -532,9 +532,9 @@
             <!-- card 下排 -->
             <div class="w-full">
                 <!-- 交通工具btn -->
-                <div class="">
-                    <div class="flex items-center ml-5">
-                        <div class="flex" role="group">
+                <div class="w-full">
+                    <div class="flex w-full items-center ml-5">
+                        <div class="flex w-full" role="group">
                             <button type="button"
                                     class="group mr-2 rounded-full px-4 py-1 bg-white border-2 border-blue-500 font-bold text-xs leading-tight uppercase hover:bg-blue-600 focus:bg-blue-700  focus:outline-none text-white focus:ring-0 text-white active:bg-blue-800	 transition duration-150 ease-in-out 	">
                                 <h1 class="text-blue-500 group-hover:text-white group-focus:text-white">機車</h1>
@@ -592,7 +592,7 @@
 </div>
 
 <!-- 店家推薦 -->
-<div class="  bg-orange-400  flex w-full mt-7 ">
+<div class="   flex w-full mt-7 ">
 
     <div class=" w-1/4 grid justify-items-center bg-gray-100 hidden xl:block lg:hidden">
         <div class=" grid place-content-center w-full ">
@@ -616,7 +616,7 @@
         </div>
     </div>
 
-    <div class="w-3/4 bg-gray-50 grid justify-items-center">
+    <div class="w-3/4 lg:w-full md:w-full sm:w-full bg-gray-50 grid justify-items-center">
         <div class="m-5	">
             <p class="text-center text-3xl font-bold">
                 店家推薦
@@ -788,7 +788,7 @@
 </div>
 
 <!-- 店家評論 -->
-<div class="  bg-orange-400  flex w-full mt-7 ">
+<div class="   flex w-full mt-7 ">
 
     <div class=" w-1/4 grid justify-items-center bg-gray-100 hidden xl:block lg:hidden">
         <div class=" grid place-content-center w-full ">
@@ -812,7 +812,7 @@
         </div>
     </div>
 
-    <div class="w-3/4 bg-gray-50 grid justify-items-center">
+    <div class="w-3/4 lg:w-full md:w-full sm:w-full bg-gray-50 grid justify-items-center">
         <div class="m-5	">
             <p class="text-center text-3xl font-bold">
                 店家評論
@@ -922,7 +922,7 @@
 </div>
 
 <!-- 問題回報 -->
-<div class="  bg-orange-400  flex w-full mt-7 ">
+<div class="  flex w-full mt-7 ">
     <div class=" w-1/4 grid justify-items-center bg-gray-100 hidden xl:block lg:hidden">
         <div class=" grid place-content-center w-full ">
             <div class="relative w-64  top-64 ">
@@ -945,9 +945,9 @@
         </div>
     </div>
 
-    <div class="w-3/4 bg-gray-50 grid justify-items-center">
+    <div class="w-3/4 lg:w-full md:w-full sm:w-full bg-gray-50 grid justify-items-center">
 
-        <div class="flex mx-5 w-full	">
+        <div class="flex mx-5 w-full">
             <div
                 class=" m-6 mb-10 flex justify-center content-center  p-6 block  rounded-lg shadow-lg bg-white w-full mt-4 grid grid-cols-2 gap-24">
                 <div class=" grid content-center">
