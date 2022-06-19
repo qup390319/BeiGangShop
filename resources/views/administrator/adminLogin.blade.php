@@ -29,25 +29,25 @@
     </head>
     <body>
 
-    <div class="w-full h-1920 grid content-center">
+    <div class="w-full h-1920 grid content-center ">
         <div>
             <div class="flex justify-center grid content-end h-64">
                 <div class="text-center text-4xl text-blue-500 font-bold">hello!</div>
                 <div class="text-center text-xl text-blue-500">美食大補帖</div>
             </div>
-            <div class="flex justify-end">
-                <div class="text-left w-64 text-sm text-red-500">管理員登入</div>
+            <div class="flex justify-center">
+                <div class="flex justify-end text-left w-64 text-sm text-red-500">管理員登入</div>
             </div>
         </div>
-        <div>
+        <div class="w-full flex justify-center">
             <form action="{{route('post_login_page')}}" method="post">
-                <div class="block p-6 mx-12 bg-white">
-
+                <div class="block p-6 mx-12 bg-white ">
                         @csrf
-                        <div class="form-group mb-6">
+                        <div class="form-group mb-6 flex content-center justify-center">
                             <input name="account" class="form-control
                   block
-                  w-full
+                  lg:w-64
+                  md:w-full
                   px-3
                   py-1.5
                   text-base
@@ -64,9 +64,10 @@
                   focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail1"
                                    aria-describedby="emailHelp" placeholder="帳號 ">
                         </div>
-                        <div class="form-group mb-6">
+                        <div class="form-group mb-6 flex content-center justify-center">
                             <input name="password" type="password" class="form-control block
-                  w-full
+                  lg:w-64
+                  md:w-full
                   px-3
                   py-1.5
                   text-base
@@ -87,8 +88,9 @@
                             <a href="#!"
                                class="text-sm text-gray-400 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out"></a>
                         </div>
-                        <div class="flex justify-end">
-                            <button type="submit" class="
+                        <div class="flex justify-center w-full">
+                            <div class="flex justify-end w-56">
+                                <button type="submit" class="
                     mt-2
                     px-6
                     py-2.5
@@ -106,7 +108,8 @@
                     duration-150
                     ease-in-out
                     ">登入
-                            </button>
+                                </button>
+                            </div>
                         </div>
 
                 </div>
