@@ -1124,9 +1124,13 @@
         maxZoom: 18,
     }).addTo(map);
 
+
     // 建立地標
     var marker = L.marker([23.566270891735304, 120.30477734879676]);
-    marker.addTo(map);
+    marker.addTo(map).bindPopup('<h1>加運包子店</h1>')
+        .openPopup();
+
+
 
     // 讀取 GeoJSON，加入行政區邊
     $.getJSON('YOURFILE.json', function (r) {
