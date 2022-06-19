@@ -829,7 +829,7 @@
                             <div class="form-group mb-6 w-72">
                                 <label for=" storeName" class="form-label inline-block mb-2 text-gray-700">
                                     店家名稱</label>
-                                <input id="recommend_store_name"  type="text" class="form-control
+                                <input id="recommend_store_name" type="text" class="form-control
                         block
                         w-full
                         px-3
@@ -1041,6 +1041,524 @@
 
 </div>
 
+{{--open modal--}}
+<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+     id="exampleModalXl" tabindex="-1" aria-labelledby="exampleModalXlLabel" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-xl relative w-auto pointer-events-none">
+        <div
+            class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+            <div
+                class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalXlLabel">
+                </h5>
+                <button type="button"
+                        class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                        data-bs-dismiss="modal" aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body relative p-4 w-full">
+                <div class="flex">
+                    {{--左邊--}}
+                    <div class="">
+                        <div class="flex flex-wrap justify-center">
+                            <img
+                                src="images/R.png"
+                                class="p-1 bg-white border rounded max-w-sm"
+                                alt="..."
+                            />
+                        </div>
+                    </div>
+                    {{--/左邊--}}
+
+                    {{--右邊--}}
+                    <div class="pl-5 w-full">
+                        {{--標題--}}
+                        <div class="flex flex-wrap justify-start pb-2">
+                            <div class="font-bold text-4xl"><input id="modal_store_name" value="加運包子店"></div>
+                        </div>
+                        {{--/標題--}}
+                        {{--內容--}}
+                        <div class="w-full items-center justify-center">
+                            {{--標籤按鈕--}}
+                            <div class="flex w-1/2 items-center justify-center">
+                                <div class="w-full inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
+                                    <button id="look_info" onclick="look_info_btn()" type="button"
+                                            class="w-full rounded-l inline-block border border-gray-200 px-6 py-2.5 bg-gray-100 text-gray-900 text-lg leading-tight uppercase hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:ring-0 active:bg-gray-300 transition duration-150 ease-in-out">
+                                        店家資訊
+                                    </button>
+                                    <button id="look_recommend" onclick="look_recommend_btn()" type="button"
+                                            class="w-full rounded-r inline-block border border-gray-200 px-6 py-2.5 bg-gray-100 text-gray-900 text-lg leading-tight uppercase hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:ring-0 active:bg-gray-300 transition duration-150 ease-in-out">
+                                        評價
+                                    </button>
+                                </div>
+                            </div>
+                            {{--/標籤按鈕--}}
+                            {{--按鈕內頁--}}
+                            <div class="w-full pt-5">
+                                {{--店家資訊內頁--}}
+                                <div id="modal_info_content" class="w-full">
+                                    <div class="flex w-full grid grid-cols-3 gap-5">
+                                        {{--單樣餐點--}}
+                                        <div class="w-full flex">
+                                            <div class="flex flex-wrap w-full justify-center">
+                                                <img
+                                                    src="images/R.png"
+                                                    class="p-1 bg-white border rounded w-full"
+                                                    alt="..."
+                                                />
+                                            </div>
+                                            <div class="w-full">
+                                                <div class="w-full">餐點名稱</div>
+                                                <div class="w-full">金額$</div>
+                                            </div>
+                                        </div>
+                                        {{--/單樣餐點--}}
+                                        {{--單樣餐點--}}
+                                        <div class="w-full flex">
+                                            <div class="flex flex-wrap w-full justify-center">
+                                                <img
+                                                    src="images/R.png"
+                                                    class="p-1 bg-white border rounded w-full"
+                                                    alt="..."
+                                                />
+                                            </div>
+                                            <div class="w-full">
+                                                <div class="w-full">餐點名稱</div>
+                                                <div class="w-full">金額$</div>
+                                            </div>
+                                        </div>
+                                        {{--/單樣餐點--}}
+                                        {{--單樣餐點--}}
+                                        <div class="w-full flex">
+                                            <div class="flex flex-wrap w-full justify-center">
+                                                <img
+                                                    src="images/R.png"
+                                                    class="p-1 bg-white border rounded w-full"
+                                                    alt="..."
+                                                />
+                                            </div>
+                                            <div class="w-full">
+                                                <div class="w-full">餐點名稱</div>
+                                                <div class="w-full">金額$</div>
+                                            </div>
+                                        </div>
+                                        {{--/單樣餐點--}}
+                                        {{--單樣餐點--}}
+                                        <div class="w-full flex">
+                                            <div class="flex flex-wrap w-full justify-center">
+                                                <img
+                                                    src="images/R.png"
+                                                    class="p-1 bg-white border rounded w-full"
+                                                    alt="..."
+                                                />
+                                            </div>
+                                            <div class="w-full">
+                                                <div class="w-full">餐點名稱</div>
+                                                <div class="w-full">金額$</div>
+                                            </div>
+                                        </div>
+                                        {{--/單樣餐點--}}
+                                        {{--單樣餐點--}}
+                                        <div class="w-full flex">
+                                            <div class="flex flex-wrap w-full justify-center">
+                                                <img
+                                                    src="images/R.png"
+                                                    class="p-1 bg-white border rounded w-full"
+                                                    alt="..."
+                                                />
+                                            </div>
+                                            <div class="w-full">
+                                                <div class="w-full">餐點名稱</div>
+                                                <div class="w-full">金額$</div>
+                                            </div>
+                                        </div>
+                                        {{--/單樣餐點--}}
+                                        {{--單樣餐點--}}
+                                        <div class="w-full flex">
+                                            <div class="flex flex-wrap w-full justify-center">
+                                                <img
+                                                    src="images/R.png"
+                                                    class="p-1 bg-white border rounded w-full"
+                                                    alt="..."
+                                                />
+                                            </div>
+                                            <div class="w-full">
+                                                <div class="w-full">餐點名稱</div>
+                                                <div class="w-full">金額$</div>
+                                            </div>
+                                        </div>
+                                        {{--/單樣餐點--}}
+                                    </div>
+                                    {{--頁碼--}}
+                                    <div class="flex pt-5">
+                                        <div class="flex justify-center">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="flex list-style-none">
+                                                    <li class="page-item"><a
+                                                            class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                                            href="#">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                 class="h-10 w-10 grid content-center text-gray-100" viewBox="0 0 20 20"
+                                                                 fill="currentColor">
+                                                                <path fill-rule="evenodd"
+                                                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z"
+                                                                      clip-rule="evenodd"/>
+                                                            </svg>
+                                                        </a></li>
+                                                    <li class="page-item"><a
+                                                            class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                                            href="#">2</a></li>
+                                                    <li class="page-item"><a
+                                                            class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                                            href="#">3</a></li>
+                                                    <li class="page-item"><a
+                                                            class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                                            href="#">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                 class="h-10 w-10 grid content-center text-gray-500" viewBox="0 0 20 20"
+                                                                 fill="currentColor">
+                                                                <path fill-rule="evenodd"
+                                                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                                                                      clip-rule="evenodd"/>
+                                                            </svg>
+                                                        </a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                    {{--/頁碼--}}
+                                </div>
+                                {{--/店家資訊內頁--}}
+
+                                {{--評價--}}
+                                <div id="modal_recommend_content" class="w-full hidden">
+                                    <div class="flex w-full grid grid-cols-2 gap-5">
+                                        {{--單人評論--}}
+                                        <div class="flex w-full">
+                                            <div class="w-1/3">
+                                                <img
+                                                    src="images/headshot01.png"
+                                                    class="rounded-full w-24 shadow-lg"
+                                                    alt="Avatar"
+                                                />
+                                            </div>
+                                            <div class="w-2/3 grid content-center">
+                                                <div>
+                                                    {{--星星--}}
+                                                    <ul class="flex justify-start">
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                 data-icon="star" class="w-4 text-yellow-500 mr-1"
+                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                            </svg>
+                                                        </li>
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                 data-icon="star" class="w-4 text-yellow-500 mr-1"
+                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                            </svg>
+                                                        </li>
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                 data-icon="star" class="w-4 text-yellow-500 mr-1"
+                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                            </svg>
+                                                        </li>
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                 data-icon="star" class="w-4 text-yellow-500 mr-1"
+                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                            </svg>
+                                                        </li>
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="far"
+                                                                 data-icon="star" class="w-4 text-yellow-500" role="img"
+                                                                 xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                                                            </svg>
+                                                        </li>
+                                                    </ul>
+                                                    {{--/星星--}}
+                                                </div>
+                                                <div class="truncate">
+                                                    這家包子非常的美味
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{--/單人評論--}}
+                                        {{--單人評論--}}
+                                        <div class="flex w-full">
+                                            <div class="w-1/3">
+                                                <img
+                                                    src="images/headshot06.jpg"
+                                                    class="rounded-full w-24 shadow-lg"
+                                                    alt="Avatar"
+                                                />
+                                            </div>
+                                            <div class="w-2/3 grid content-center">
+                                                <div>
+                                                    {{--星星--}}
+                                                    <ul class="flex justify-start">
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                 data-icon="star" class="w-4 text-yellow-500 mr-1"
+                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                            </svg>
+                                                        </li>
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                 data-icon="star" class="w-4 text-yellow-500 mr-1"
+                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                            </svg>
+                                                        </li>
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                 data-icon="star" class="w-4 text-yellow-500 mr-1"
+                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                            </svg>
+                                                        </li>
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                 data-icon="star" class="w-4 text-yellow-500 mr-1"
+                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                            </svg>
+                                                        </li>
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="far"
+                                                                 data-icon="star" class="w-4 text-yellow-500" role="img"
+                                                                 xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                                                            </svg>
+                                                        </li>
+                                                    </ul>
+                                                    {{--/星星--}}
+                                                </div>
+                                                <div class="truncate">
+                                                    這家包子非常的美味
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{--/單人評論--}}
+                                        {{--單人評論--}}
+                                        <div class="flex w-full">
+                                            <div class="w-1/3">
+                                                <img
+                                                    src="images/headshot03.jpg"
+                                                    class="rounded-full w-24 shadow-lg"
+                                                    alt="Avatar"
+                                                />
+                                            </div>
+                                            <div class="w-2/3 grid content-center">
+                                                <div>
+                                                    {{--星星--}}
+                                                    <ul class="flex justify-start">
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                 data-icon="star" class="w-4 text-yellow-500 mr-1"
+                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                            </svg>
+                                                        </li>
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                 data-icon="star" class="w-4 text-yellow-500 mr-1"
+                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                            </svg>
+                                                        </li>
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                 data-icon="star" class="w-4 text-yellow-500 mr-1"
+                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                            </svg>
+                                                        </li>
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                 data-icon="star" class="w-4 text-yellow-500 mr-1"
+                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                            </svg>
+                                                        </li>
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="far"
+                                                                 data-icon="star" class="w-4 text-yellow-500" role="img"
+                                                                 xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                                                            </svg>
+                                                        </li>
+                                                    </ul>
+                                                    {{--/星星--}}
+                                                </div>
+                                                <div class="truncate">
+                                                    這家包子非常的美味
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{--/單人評論--}}
+                                        {{--單人評論--}}
+                                        <div class="flex w-full">
+                                            <div class="w-1/3">
+                                                <img
+                                                    src="images/headshot04.jpg"
+                                                    class="rounded-full w-24 shadow-lg"
+                                                    alt="Avatar"
+                                                />
+                                            </div>
+                                            <div class="w-2/3 grid content-center">
+                                                <div>
+                                                    {{--星星--}}
+                                                    <ul class="flex justify-start">
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                 data-icon="star" class="w-4 text-yellow-500 mr-1"
+                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                            </svg>
+                                                        </li>
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                 data-icon="star" class="w-4 text-yellow-500 mr-1"
+                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                            </svg>
+                                                        </li>
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                 data-icon="star" class="w-4 text-yellow-500 mr-1"
+                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                            </svg>
+                                                        </li>
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                 data-icon="star" class="w-4 text-yellow-500 mr-1"
+                                                                 role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                            </svg>
+                                                        </li>
+                                                        <li>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="far"
+                                                                 data-icon="star" class="w-4 text-yellow-500" role="img"
+                                                                 xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                      d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                                                            </svg>
+                                                        </li>
+                                                    </ul>
+                                                    {{--/星星--}}
+                                                </div>
+                                                <div class="truncate">
+                                                    這家包子非常的美味
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{--/單人評論--}}
+                                    </div>
+                                    {{--頁碼--}}
+                                    <div class="flex pt-5">
+                                        <div class="flex justify-center">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="flex list-style-none">
+                                                    <li class="page-item"><a
+                                                            class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                                            href="#">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                 class="h-10 w-10 grid content-center text-gray-100" viewBox="0 0 20 20"
+                                                                 fill="currentColor">
+                                                                <path fill-rule="evenodd"
+                                                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z"
+                                                                      clip-rule="evenodd"/>
+                                                            </svg>
+                                                        </a></li>
+                                                    <li class="page-item"><a
+                                                            class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                                            href="#">2</a></li>
+                                                    <li class="page-item"><a
+                                                            class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                                            href="#">3</a></li>
+                                                    <li class="page-item"><a
+                                                            class="h-full grid content-center page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                                            href="#">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                 class="h-10 w-10 grid content-center text-gray-500" viewBox="0 0 20 20"
+                                                                 fill="currentColor">
+                                                                <path fill-rule="evenodd"
+                                                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                                                                      clip-rule="evenodd"/>
+                                                            </svg>
+                                                        </a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                    {{--/頁碼--}}
+                                </div>
+                                {{--/評價--}}
+                            </div>
+                            {{--/按鈕內頁--}}
+                        </div>
+                        {{--/內容--}}
+                    </div>
+                    {{--/右邊--}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- footer -->
 <footer class="grid justify-items-center text-center text-white mt-5" style="background-color: #f1f1f1;">
     <div class="container pt-9">
@@ -1131,7 +1649,6 @@
         .openPopup();
 
 
-
     // 讀取 GeoJSON，加入行政區邊
     $.getJSON('YOURFILE.json', function (r) {
         L.geoJSON(r, {color: '#333'}).addTo(map);
@@ -1174,6 +1691,17 @@
             }
         })
     }
+
+    function look_info_btn() {
+        $('#modal_info_content').removeClass('hidden')
+        $('#modal_recommend_content').addClass('hidden')
+    }
+
+    function look_recommend_btn() {
+        $('#modal_recommend_content').removeClass('hidden')
+        $('#modal_info_content').addClass('hidden')
+    }
+
 
     //店家推薦
     function submit_commend() {
@@ -1225,6 +1753,7 @@
             }
         })
     }
+
 
     //店家評論
     function submit_recommend() {
@@ -1398,7 +1927,7 @@
         //將資料寫入container
         $.each(store_array, function (index, value) {
             let row = `
-            <div class="rounded-lg shadow-lg bg-white max-w-sm m-5">
+            <div class="rounded-lg shadow-lg bg-white max-w-sm m-5"  data-bs-toggle="modal" data-bs-target="#exampleModalXl">
                 <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
                     <img class="rounded-t-lg object-cover h-48 w-96" style="width: 50rem"
                          src="{{asset('images/kv_bg.jpg')}}"
