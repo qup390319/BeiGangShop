@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
@@ -25,17 +26,18 @@
     <!-- 地圖 -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-          crossorigin="" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+          crossorigin=""/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
     <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"/>
 
     <style>
         #map {
             width: 100%;
             height: 100%;
         }
+
         .kv.mt {
             background-size: cover;
             height: 670px;
@@ -46,7 +48,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css"/>
     <title>北港美食大補帖</title>
 </head>
 
@@ -98,7 +100,7 @@
         lg:mt-0
         mr-1
       " href="#">
-                    <img src="{{asset('images/Logo.png')}}" style="height: 60px" alt="" loading="lazy" />
+                    <img src="{{asset('images/Logo.png')}}" style="height: 60px" alt="" loading="lazy"/>
                 </a>
             </div>
             <div class="flex justify-around w-full text-xl font-bold px-10">
@@ -113,6 +115,9 @@
                 </div>
                 <div>
                     <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" href="#">店家推薦</a>
+                </div>
+                <div>
+                    <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" href="#">店家評論</a>
                 </div>
                 <div>
                     <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" href="#">問題回報</a>
@@ -145,9 +150,12 @@
                     and creating real digital products for real users.
                 </p>
                 <button type="button"
-                        class=" w-64 h-12 mt-10 inline-block px-6 py-1 bg-orange-600 text-white font-bold text-xl leading-tight uppercase rounded-xl shadow-md hover:bg-orange-700 hover:shadow-lg active:bg-orange-800 active:shadow-lg transition duration-150 ease-in-out">開始瀏覽</button>
+                        class=" w-64 h-12 mt-10 inline-block px-6 py-1 bg-orange-600 text-white font-bold text-xl leading-tight uppercase rounded-xl shadow-md hover:bg-orange-700 hover:shadow-lg active:bg-orange-800 active:shadow-lg transition duration-150 ease-in-out">
+                    開始瀏覽
+                </button>
             </div>
-            <img class=" w-64 h-64 ml-10 my-10 mr-20 md:h-auto object-cover " src="{{asset('images/bannerDM.png')}}" alt="" />
+            <img class=" w-64 h-64 ml-10 my-10 mr-20 md:h-auto object-cover " src="{{asset('images/bannerDM.png')}}"
+                 alt=""/>
 
         </div>
     </div>
@@ -170,7 +178,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-gray-400 " fill="none"
                          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+                              d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/>
                     </svg>
                 </div>
                 <div class="absolute w-64 ">
@@ -222,9 +230,9 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none"
                                          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                                     </svg>
                                     地區
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas"
@@ -309,13 +317,13 @@
 
                 <div class=" items-center xl:w-96 m-5">
                     <div class="input-group flex items-stretch ">
-                        <input type="search"
+                        <input type="search" id="input_search_hot_store"
                                class="form-control  relative flex-auto min-w-0 block px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                               placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+                               placeholder="搜尋店家名稱" aria-label="Search" aria-describedby="button-addon2">
                         <button
                             class="btn inline-block px-6 py-2.5 bg-white border
                                 border-gray-400 text-gray-500 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-400 hover:shadow-lg focus:bg-gray-400  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out flex items-center"
-                            type="button" id="button-addon2">
+                            type="button" id="btn_search_hot_store">
                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search"
                                  class="w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                 <path fill="currentColor"
@@ -327,18 +335,20 @@
                 </div>
             </div>
             <!-- card 下排 -->
-            <div class="flex  w-full">
+            <div class="flex  w-full" id="hot_store_container">
+                <!--熱門餐廳card-->
                 <div class="rounded-lg shadow-lg bg-white max-w-sm m-5">
                     <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-                        <img class="rounded-t-lg object-cover h-48 w-96" style="width: 50rem" src="{{asset('images/kv_bg.jpg')}}"
-                             alt="" />
+                        <img class="rounded-t-lg object-cover h-48 w-96" style="width: 50rem"
+                             src="{{asset('images/kv_bg.jpg')}}"
+                             alt=""/>
                     </a>
                     <div class="px-6 pt-1">
                         <div class=" flex justify-end">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
-                                      d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                      d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                             <p class="ml-2 mb-2"> 4.8</p>
                         </div>
@@ -352,15 +362,16 @@
                 </div>
                 <div class="rounded-lg shadow-lg bg-white max-w-sm m-5">
                     <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-                        <img class="rounded-t-lg object-cover h-48 w-96" style="width: 50rem" src="{{asset('images/kv_bg.jpg')}}"
-                             alt="" />
+                        <img class="rounded-t-lg object-cover h-48 w-96" style="width: 50rem"
+                             src="{{asset('images/kv_bg.jpg')}}"
+                             alt=""/>
                     </a>
                     <div class="px-6 pt-1">
                         <div class=" flex justify-end">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
-                                      d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                      d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                             <p class="ml-2 mb-2"> 4.8</p>
                         </div>
@@ -374,15 +385,16 @@
                 </div>
                 <div class="rounded-lg shadow-lg bg-white max-w-sm m-5">
                     <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-                        <img class="rounded-t-lg object-cover h-48 w-96" style="width: 50rem" src="{{asset('images/kv_bg.jpg')}}"
-                             alt="" />
+                        <img class="rounded-t-lg object-cover h-48 w-96" style="width: 50rem"
+                             src="{{asset('images/kv_bg.jpg')}}"
+                             alt=""/>
                     </a>
                     <div class="px-6 pt-1">
                         <div class=" flex justify-end">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
-                                      d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                      d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                             <p class="ml-2 mb-2"> 4.8</p>
                         </div>
@@ -396,15 +408,16 @@
                 </div>
                 <div class="rounded-lg shadow-lg bg-white max-w-sm m-5">
                     <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-                        <img class="rounded-t-lg object-cover h-48 w-96" style="width: 50rem" src="{{asset('images/kv_bg.jpg')}}"
-                             alt="" />
+                        <img class="rounded-t-lg object-cover h-48 w-96" style="width: 50rem"
+                             src="{{asset('images/kv_bg.jpg')}}"
+                             alt=""/>
                     </a>
                     <div class="px-6 pt-1">
                         <div class=" flex justify-end">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
-                                      d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                      d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                             <p class="ml-2 mb-2"> 4.8</p>
                         </div>
@@ -423,36 +436,36 @@
                         <div class="">
                             <div class="">
                                 <ul class="flex list-style-none items-center">
-                                    <li class=" page-item"><a
-                                            class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 focus:shadow-none"
-                                            href="#" aria-label="Previous">
+                                    <li class=" page-item" id="btn_prev_page"><a
+                                            class=" page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 focus:shadow-none"
+                                            aria-label="Previous">
                                                 <span aria-hidden="true">
                                                     <svg xmlns="http://www.w3.org/2000/svg"
                                                          class="h-20 w-20 text-gray-300" fill="none" viewBox="0 0 24 24"
                                                          stroke="currentColor" stroke-width="2">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                                              d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+                                                              d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z"/>
                                                     </svg>
                                                 </span>
                                         </a></li>
-                                    <li class="page-item"><a
-                                            class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-                                            href="#">1</a></li>
-                                    <li class="page-item"><a
-                                            class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-                                            href="#">2</a></li>
-                                    <li class="page-item"><a
-                                            class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-                                            href="#">3</a></li>
-                                    <li class="page-item"><a
-                                            class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-                                            href="#" aria-label="Next">
+                                    <li class="page-item" id="text_prev_page"><a
+                                            class="text_page_num page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                        >1</a></li>
+                                    <li class="page-item" id="text_curr_page"><a
+                                            class="text_page_num page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                        >2</a></li>
+                                    <li class="page-item" id="text_next_page"><a
+                                            class="text_page_num page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                        >3</a></li>
+                                    <li class="page-item" id="btn_next_page"><a
+                                            class=" page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                            aria-label="Next">
                                                 <span aria-hidden="true">
                                                     <svg xmlns="http://www.w3.org/2000/svg"
                                                          class="h-20 w-20 text-gray-400" fill="none" viewBox="0 0 24 24"
                                                          stroke="currentColor" stroke-width="2">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                                              d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                              d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                                     </svg></span>
                                         </a></li>
                                 </ul>
@@ -477,7 +490,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-gray-400 " fill="none"
                          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+                              d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/>
                     </svg>
                 </div>
                 <div class="absolute w-64 ">
@@ -558,11 +571,13 @@
                                 bg-transparent
                                 accent-pink-500
                                 focus:outline-none focus:ring-0 focus:shadow-none
-                              " min="5" max="60" step="5" id="customRange3" />
+                              " min="5" max="60" step="5" id="customRange3"/>
                     </div>
                     <div class="grid content-end">
                         <button type="button"
-                                class="ml-5 inline-block px-5 py-2 border-2 border-orange-600 text-orange-600 font-medium text-xs leading-tight uppercase rounded hover:bg-orange-300 hover:bg-opacity-5 focus:outline-none focus:ring-0 active:bg-orange-600 transition duration-200 ease-in-out ">確定</button>
+                                class="ml-5 inline-block px-5 py-2 border-2 border-orange-600 text-orange-600 font-medium text-xs leading-tight uppercase rounded hover:bg-orange-300 hover:bg-opacity-5 focus:outline-none focus:ring-0 active:bg-orange-600 transition duration-200 ease-in-out ">
+                            確定
+                        </button>
                     </div>
                 </div>
                 <!-- 地圖 -->
@@ -586,7 +601,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-gray-400 " fill="none"
                          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+                              d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/>
                     </svg>
                 </div>
                 <div class="absolute w-64 ">
@@ -604,7 +619,7 @@
     <div class="w-3/4 bg-gray-50 grid justify-items-center">
         <div class="m-5	">
             <p class="text-center text-3xl font-bold">
-                店家推薦、評價
+                店家推薦
             </p>
             <p class="text-center">
                 分享好餐廳讓大家知道!
@@ -612,13 +627,13 @@
         </div>
         <div class="flex mx-5 w-full	">
             <div class=" m-6 mb-10 flex justify-center  p-6 block  rounded-lg shadow-lg bg-white w-full mt-4">
-                <form>
+                <div>
                     <div class="grid grid-cols-2 gap-24	">
                         <div class="">
                             <div class="form-group mb-6 w-72">
                                 <label for=" storeName" class="form-label inline-block mb-2 text-gray-700">
                                     店家名稱</label>
-                                <input type="text" class="form-control
+                                <input id="comment_store_name" type="text" class="form-control
                         block
                         w-full
                         px-3
@@ -638,7 +653,7 @@
                             <div class="form-group mb-6">
                                 <label for="storeAddress" class="form-label inline-block mb-2 text-gray-700">
                                     店家地址</label>
-                                <input type="text" class="form-control
+                                <input id="comment_store_address" type="text" class="form-control
                         block
                         w-full
                         px-3
@@ -658,7 +673,7 @@
                             <div class="form-group mb-6">
                                 <label for="storePhone" class="form-label inline-block mb-2 text-gray-700">
                                     店家電話</label>
-                                <input type="text" class="form-control
+                                <input id="comment_store_phone" type="text" class="form-control
                         block
                         w-full
                         px-3
@@ -680,7 +695,7 @@
                             <div class="form-group mb-6">
                                 <label for="name" class="form-label inline-block mb-2 text-gray-700">
                                     姓名</label>
-                                <input type="text" class="form-control
+                                <input id="comment_name" type="text" class="form-control
                             block
                             w-full
                             px-3
@@ -700,7 +715,7 @@
                             <div class="form-group mb-6">
                                 <label for="email" class="form-label inline-block mb-2 text-gray-700">
                                     Email</label>
-                                <input type="email" class="form-control block
+                                <input id="comment_email" type="email" class="form-control block
                               w-full
                               px-3
                               py-1.5
@@ -718,8 +733,8 @@
                             </div>
                             <div class="form-group mb-6">
                                 <label for="opinion"
-                                       class="form-label inline-block mb-2 text-gray-700">推薦、評價</label>
-                                <textarea class="
+                                       class="form-label inline-block mb-2 text-gray-700">推薦</label>
+                                <textarea id="comment_content" class="
             form-control
             block
             w-full
@@ -741,7 +756,7 @@
                     </div>
 
                     <div class="flex justify-center">
-                        <button  class="
+                        <button onclick="submit_commend()" class="
                             w-32
                             px-6
                             py-2.5
@@ -760,14 +775,148 @@
                             active:bg-gray-500 active:shadow-lg
                             transition
                             duration-150
-                            ease-in-out">送出</button>
+                            ease-in-out">店家推薦送出
+                        </button>
                     </div>
 
-                </form>
+                </div>
             </div>
         </div>
     </div>
 
+
+</div>
+
+<!-- 店家評論 -->
+<div class="  bg-orange-400  flex w-full mt-7 ">
+
+    <div class=" w-1/4 grid justify-items-center bg-gray-100 hidden xl:block lg:hidden">
+        <div class=" grid place-content-center w-full ">
+            <div class="relative w-64  top-64 ">
+                <div class="absolute -top-10 -left-10 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-gray-400 " fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/>
+                    </svg>
+                </div>
+                <div class="absolute w-64 ">
+                    <div class="text-6xl ">
+                        店家
+                    </div>
+                    <div class="text-6xl">
+                        　評論
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-3/4 bg-gray-50 grid justify-items-center">
+        <div class="m-5	">
+            <p class="text-center text-3xl font-bold">
+                店家評論
+            </p>
+            <p class="text-center">
+                您的讚美是店家進度的動力!
+            </p>
+        </div>
+        <div class="flex mx-5 w-full	">
+            <div class=" m-6 mb-10 flex justify-center  p-6 block  rounded-lg shadow-lg bg-white w-full mt-4">
+                <div>
+                    <div class="flex grid  gap-4">
+                        <div class="">
+                            <div class="form-group mb-6 w-72">
+                                <label for=" storeName" class="form-label inline-block mb-2 text-gray-700">
+                                    店家名稱</label>
+                                <input id="recommend_store_name"  type="text" class="form-control
+                        block
+                        w-full
+                        px-3
+                        py-1.5
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="storeName"
+                                       placeholder="請填寫">
+                            </div>
+                        </div>
+                        <div class="form-group mb-6">
+                            <label for="email" class="form-label inline-block mb-2 text-gray-700">
+                                Email</label>
+                            <input id="recommend_email" type="email" class="form-control block
+                              w-full
+                              px-3
+                              py-1.5
+                              text-base
+                              font-normal
+                              text-gray-700
+                              bg-white bg-clip-padding
+                              border border-solid border-gray-300
+                              rounded
+                              transition
+                              ease-in-out
+                              m-0
+                              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="email"
+                                   placeholder="">
+                        </div>
+                        <div class="form-group mb-6">
+                            <label for="opinion"
+                                   class="form-label inline-block mb-2 text-gray-700">推薦</label>
+                            <textarea id="recommend_content" class="
+            form-control
+            block
+            w-full
+            px-3
+            py-1.5
+            text-base
+            font-normal
+            text-gray-700
+            bg-white bg-clip-padding
+            border border-solid border-gray-300
+            rounded
+            transition
+            ease-in-out
+            m-0
+            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+          " id="opinion" rows="5" placeholder="Your message"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <button onclick="submit_recommend()" class="
+                            w-32
+                            px-6
+                            py-2.5
+                            bg-white
+                            text-gray-700
+                            font-medium
+                            text-xs
+                            leading-tight
+                            uppercase
+                            rounded
+                            border
+                            border-gray-400
+                            shadow-md
+                            hover:bg-gray-400 hover:shadow-lg
+                            <focus:bg-gray-400></focus:bg-gray-400> focus:shadow-lg focus:outline-none focus:ring-0
+                            active:bg-gray-500 active:shadow-lg
+                            transition
+                            duration-150
+                            ease-in-out">送出
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </div>
@@ -781,7 +930,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-gray-400 " fill="none"
                          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+                              d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/>
                     </svg>
                 </div>
                 <div class="absolute w-64 ">
@@ -826,7 +975,7 @@
                 ease-in-out
                 m-0
                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-              " id="opinion" rows="5" placeholder="輸入問題" ></textarea>
+              " id="opinion" rows="5" placeholder="輸入問題"></textarea>
                                 </div>
                                 <div class="form-group mb-6">
                                     <label for="email" class="form-label inline-block mb-2 text-gray-700">
@@ -866,11 +1015,12 @@
                                 border-gray-400
                                 shadow-md
                                 hover:bg-gray-400 hover:shadow-lg
-                                focus:bg-gray-400 focus:shadow-lg focus:outline-none focus:ring-0
+                                focus:bg-gray-400 focus:shado問w-lg focus:outline-none focus:ring-0
                                 active:bg-gray-500 active:shadow-lg
                                 transition
                                 duration-150
-                                ease-in-out">送出</button>
+                                ease-in-out">送出
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -880,7 +1030,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-15 w-15 text-gray-400 opacity-25"
                              fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
-                                  d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76" />
+                                  d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76"/>
                         </svg>
 
                     </div>
@@ -980,12 +1130,13 @@
 
     // 讀取 GeoJSON，加入行政區邊
     $.getJSON('YOURFILE.json', function (r) {
-        L.geoJSON(r, { color: '#333' }).addTo(map);
+        L.geoJSON(r, {color: '#333'}).addTo(map);
     });
 
-    function submit_problem(){
-        let insert_problem=$('#insert_problem').val();
-        let insert_email=$('#insert_email').val();
+    //問題回報
+    function submit_problem() {
+        let insert_problem = $('#insert_problem').val();
+        let insert_email = $('#insert_email').val();
         $.ajax({
             url: '{{route('insert_problem_data')}}',
             method: 'POST',
@@ -997,22 +1148,279 @@
             success: function (res) {
                 console.log(res);
                 // window.alert('success')
-                if (res=='err'){Swal.fire(
-                    '新增失敗',
-                    '請重新檢查填寫內容',
-                    'error'
-                )}
-                if (res=='success'){Swal.fire(
-                    '成功新增店家',
-                    '',
-                    'success'
-                )}
+                if (res == 'err') {
+                    Swal.fire(
+                        '寄出失敗',
+                        '請重新檢查填寫內容',
+                        'error'
+                    )
+                }
+                if (res == 'success') {
+                    $('#insert_problem').val('');
+                    $('#insert_email').val('');
+                    Swal.fire(
+                        '成功寄出回報',
+                        '',
+                        'success'
+                    )
+                }
             },
             error: function (res) {
                 window.alert('連線失敗');
             }
         })
     }
+
+    //店家推薦
+    function submit_commend() {
+        let comment_store_name = $('#comment_store_name').val();
+        let comment_store_address = $('#comment_store_address').val();
+        let comment_store_phone = $('#comment_store_phone').val();
+        let comment_name = $('#comment_name').val();
+        let comment_email = $('#comment_email').val();
+        let comment_content = $('#comment_content').val();
+        $.ajax({
+            url: '{{route('insert_comment_data')}}',
+            method: 'POST',
+            data: {
+                _token: '{{csrf_token()}}',
+                comment_store_name: comment_store_name,
+                comment_store_address: comment_store_address,
+                comment_store_phone: comment_store_phone,
+                comment_name: comment_name,
+                comment_email: comment_email,
+                comment_content: comment_content,
+            },
+            success: function (res) {
+                console.log(res);
+                // window.alert('success')
+                if (res == 'err') {
+                    Swal.fire(
+                        '送出失敗',
+                        '請重新檢查填寫內容',
+                        'error'
+                    )
+                }
+                if (res == 'success') {
+                    $('#comment_store_name').val('');
+                    $('#comment_store_address').val('');
+                    $('#comment_store_phone').val('');
+                    $('#comment_name').val('');
+                    $('#comment_email').val('');
+                    $('#comment_content').val('');
+
+                    Swal.fire(
+                        '成功送出推薦',
+                        '',
+                        'success'
+                    )
+                }
+            },
+            error: function (res) {
+                window.alert('連線失敗');
+            }
+        })
+    }
+
+    //店家評論
+    function submit_recommend() {
+        let recommend_store_name = $('#recommend_store_name').val();
+        let recommend_email = $('#recommend_email').val();
+        let recommend_content = $('#recommend_content').val();
+
+        $.ajax({
+            url: '{{route('insert_recommend_data')}}',
+            method: 'POST',
+            data: {
+                _token: '{{csrf_token()}}',
+                recommend_store_name: recommend_store_name,
+                recommend_email: recommend_email,
+                recommend_content: recommend_content,
+            },
+            success: function (res) {
+                console.log(res);
+                // window.alert('success')
+                if (res == 'err') {
+                    Swal.fire(
+                        '送出失敗',
+                        '請重新檢查填寫內容',
+                        'error'
+                    )
+                }
+                if (res == 'success') {
+                    $('#comment_store_name').val('');
+                    $('#comment_store_address').val('');
+                    $('#comment_store_phone').val('');
+                    $('#comment_name').val('');
+                    $('#comment_email').val('');
+                    $('#comment_content').val('');
+
+                    Swal.fire(
+                        '成功送出推薦',
+                        '',
+                        'success'
+                    )
+                }
+            },
+            error: function (res) {
+                window.alert('連線失敗');
+            }
+        })
+    }
+
+    //店家資料
+    let token = "{{csrf_token()}}"; //csrf_token
+    let store_data; //目前使用的店家資料
+    let current_page_num = 1; //目前頁數
+    let hot_store_container = $("#hot_store_container");
+
+    get_store_data()
+
+    //取得所有店家資料
+    function get_store_data() {
+        let url = "{{route('get_store_data')}}";
+        $.ajax({
+            url: url,
+            method: 'post',
+            data: {
+                _token: token,
+            },
+            success: function (res) {
+                //取得店家資料後將所有店家資料先存起來
+                store_data = res;
+                set_paginate_listener();
+                update_page_num(1);
+                set_four_store_cards_by_page_num(1);
+                console.log('get store data success');
+            },
+            error: function (res) {
+                console.log(res);
+            },
+        })
+    }
+
+    //設定paginate的listener
+    function set_paginate_listener() {
+        //paginate的數字按鈕
+        let text_page_num = $('.text_page_num');
+        text_page_num.off('click');
+        text_page_num.on('click', function () {
+            let page_num = $(this).text().trim();
+            update_page_num(page_num);
+            set_four_store_cards_by_page_num(page_num);
+        });
+
+        //paginate的上下頁按鈕
+        let btn_prev_page = $("#btn_prev_page");
+        btn_prev_page.off('click');
+        btn_prev_page.on('click', function () {
+            if (current_page_num <= 2) {
+                return;
+            }
+            update_page_num(current_page_num - 1);
+            set_four_store_cards_by_page_num(current_page_num - 1);
+        });
+
+        let btn_next_page = $("#btn_next_page");
+        btn_next_page.off('click');
+        btn_next_page.on('click', function () {
+            if (current_page_num >= (store_data.length / 4) - 1) {
+                return;
+            }
+            update_page_num(current_page_num + 1);
+            set_four_store_cards_by_page_num(current_page_num + 1);
+        });
+    }
+
+
+    //更新頁面 page_num
+    function update_page_num(page_num) {
+        //頁碼顯示框
+        let text_prev_page = $("#text_prev_page").find('a');
+        let text_curr_page = $("#text_curr_page").find('a');
+        let text_next_page = $("#text_next_page").find('a');
+        //前後頁按鈕
+        let btn_prev_page = $("#btn_prev_page").find('svg');
+        let btn_next_page = $("#btn_next_page").find('svg');
+
+        //頁數變動
+        if (page_num > 1 && page_num < (store_data.length / 4)) {
+            current_page_num = page_num;
+            text_prev_page.text(current_page_num - 1);
+            text_curr_page.text(current_page_num);
+            text_next_page.text(current_page_num + 1);
+
+            if (current_page_num <= 2) {
+                btn_prev_page.removeClass('text-gray-400');
+                btn_prev_page.addClass('text-gray-300');
+            }
+
+            if (current_page_num >= (store_data.length / 4) - 1) {
+                btn_next_page.removeClass('text-gray-400');
+                btn_next_page.addClass('text-gray-300');
+            }
+
+            if (current_page_num > 2 && current_page_num < (store_data.length / 4) - 1) {
+                btn_prev_page.removeClass('text-gray-300');
+                btn_next_page.removeClass('text-gray-300');
+                btn_prev_page.addClass('text-gray-400');
+                btn_next_page.addClass('text-gray-400');
+            }
+        }
+
+        if (page_num <= 1) {
+            text_prev_page.addClass('hidden');
+        } else if (page_num >= (store_data.length / 4)) {
+            text_next_page.addClass('hidden');
+        } else {
+            text_prev_page.removeClass('hidden');
+            text_next_page.removeClass('hidden');
+        }
+
+    }
+
+    //設定店家card
+    function set_four_store_cards_by_page_num(page_num) {
+        let store_array = []; //要抓取的店家列表
+
+        //透過頁碼計算要抓取的位置，並將要抓的資料丟進store_array
+        let start_position = 4 * (page_num - 1);
+        for (let i = start_position; i < start_position + 4; i++) {
+            store_array.push(store_data[i]);
+        }
+
+        //清空container
+        hot_store_container.children().remove();
+        //將資料寫入container
+        $.each(store_array, function (index, value) {
+            let row = `
+            <div class="rounded-lg shadow-lg bg-white max-w-sm m-5">
+                <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
+                    <img class="rounded-t-lg object-cover h-48 w-96" style="width: 50rem"
+                         src="{{asset('images/kv_bg.jpg')}}"
+                         alt=""/>
+                </a>
+                <div class="px-6 pt-1">
+                    <div class=" flex justify-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <p class="ml-2 mb-2"> 4.8</p>
+                    </div>
+                    <h5 class=" content-start text-gray-900 text-xl font-medium mb-2">${value['info_name']}</h5>
+                    <div class="mb-4 h-12 grid content-end">
+                        <p class="text-gray-700 text-sm">
+                            ${value['info_address']}
+                        </p>
+                    </div>
+                </div>
+            </div> `;
+            hot_store_container.append(row);
+        });
+    }
+
 
 </script>
 

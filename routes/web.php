@@ -31,7 +31,12 @@ Route::get('/admin/storeDetail', [AdminController::class, 'get_storeDetail_page'
 Route::post('/admin/storeDetail', [AdminController::class, 'get_storeDetail_data'])->name('get_storeDetail_data');
 Route::post('/admin/storeDetail_insert', [AdminController::class, 'insert_storeDetail_data'])->name('insert_storeDetail_data');
 
+//熱門餐廳功能
+Route::post('/admin/getStoreData', [AdminController::class, 'get_store_data'])->name('get_store_data');
+
 //主畫面
 Route::get('/', [HomeController::class, 'get_home_page'])->name('get_home_page');
 Route::post('/insert_problem_data', [HomeController::class, 'insert_problem_data'])->name('insert_problem_data');
+Route::post('/insert_comment_data', [HomeController::class, 'insert_comment_data'])->name('insert_comment_data');
+Route::post('/insert_recommend_data', [HomeController::class, 'insert_recommend_data'])->name('insert_recommend_data');
 
