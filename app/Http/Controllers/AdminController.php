@@ -55,6 +55,10 @@ class AdminController extends Controller
     //詳細通知 畫面 notiHome
     public function get_notiDetail_page(Request $request)
     {
+        //店家總數
+        $quantity = DB::table('t_store_info')
+            ->count('info_name');
+
         //獲取 通知id
         $noti_id = $request->get('noti_id');
 
@@ -65,6 +69,7 @@ class AdminController extends Controller
         //回傳資料
         $result = [
             'noti_data' => $noti_data,
+            'quantity'=>$quantity,
         ];
         return view('administrator.notiDetail', $result);
     }

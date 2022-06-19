@@ -75,16 +75,24 @@
 <!-- content -->
 <div class="mx-10 my-5">
     <!-- 店家總數 -->
-    <div>
+    <div class="flex w-full justify-between">
         <div>
-            店家總數
+            <div>
+                店家總數
+            </div>
+            <div class="bg-gray-100 w-32 h-20 flex justify-center">
+                <div class="text-6xl grid content-center">
+                    {{$quantity}}
+                </div>
+            </div>
         </div>
-        <div class="bg-gray-100 w-32 h-20 flex justify-center">
-            <div class="text-6xl grid content-center">
-                320
+        <div>
+            <div>
+                <img class="h-48" src="{{asset('images/person.png')}}">
             </div>
         </div>
     </div>
+
     <!-- /店家總數 -->
 
     <!-- 通知 -->

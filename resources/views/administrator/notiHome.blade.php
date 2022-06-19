@@ -82,7 +82,7 @@
 <!-- content -->
 <div class="mx-10 my-5">
     <!-- 店家總數 -->
-
+<div class="flex w-full justify-between">
     <div>
         <div>
             店家總數
@@ -93,6 +93,13 @@
             </div>
         </div>
     </div>
+    <div>
+        <div>
+            <img class="h-48" src="{{asset('images/person.png')}}">
+        </div>
+    </div>
+</div>
+
     <!-- /店家總數 -->
 
     <!-- 近期通知 -->
