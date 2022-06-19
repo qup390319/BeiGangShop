@@ -1676,7 +1676,6 @@
                 email: insert_email,
             },
             success: function (res) {
-                console.log(res);
                 // window.alert('success')
                 if (res == 'err') {
                     Swal.fire(
@@ -1737,7 +1736,7 @@
                 comment_content: comment_content,
             },
             success: function (res) {
-                console.log(res);
+                // console.log(res);
                 // window.alert('success')
                 if (res == 'err') {
                     Swal.fire(
@@ -1784,7 +1783,7 @@
                 recommend_content: recommend_content,
             },
             success: function (res) {
-                console.log(res);
+                // console.log(res);
                 // window.alert('success')
                 if (res == 'err') {
                     Swal.fire(
@@ -1837,10 +1836,10 @@
                 set_paginate_listener();
                 update_page_num(1);
                 set_four_store_cards_by_page_num(1);
-                console.log('get store data success');
+                // console.log('get store data success');
             },
             error: function (res) {
-                console.log(res);
+                // console.log(res);
             },
         })
     }

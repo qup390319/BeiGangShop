@@ -251,7 +251,7 @@
                 let store = res['store']['data'];
                 // let page=res['store']['data'];
 
-                console.log(res['store'])
+                // console.log(res['store'])
                 if (store.length > 0) {
                     $.each(store, function (index, value) {
                         // console.log(value['info_name']);
@@ -317,7 +317,7 @@
                 _token: '{{csrf_token()}}',
                 info_id:id,
             },success:function (res){
-                console.log(res);
+                // console.log(res);
                 if (res == 'err') {
                     Swal.fire(
                         '刪除失敗',

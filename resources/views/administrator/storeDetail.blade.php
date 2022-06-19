@@ -321,7 +321,7 @@
             id: {{$store->info_id}},
         },
         success: function (res) {
-            console.log(res['comment'])
+            // console.log(res['comment'])
 
             $("#t_comment div").remove();
             let comment = res['comment'];
@@ -465,7 +465,7 @@
                 score:score,
             },
             success: function (res) {
-                console.log(res)
+                // console.log(res)
                 if (res == 'err') {
                     Swal.fire(
                         '新增失敗',
