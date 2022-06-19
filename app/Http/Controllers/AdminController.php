@@ -216,10 +216,21 @@ class AdminController extends Controller
                     'comment_score'=>$request->score,
                 ]);
 
-
             return 'success';
         } catch (\Exception $exception) {
 
+        }
+    }
+
+    //熱門店家-取得資料
+    public function get_store_data(Request $request){
+        try{
+            //取得所有店家資料
+            $result = DB::table('t_store_info')->get();
+
+            return $result;
+        }catch (\Exception $exception){
+            return $exception;
         }
     }
 }
